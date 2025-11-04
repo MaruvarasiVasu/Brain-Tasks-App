@@ -1,0 +1,12 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: ""
+hooks:
+  AfterInstall:
+    - location: scripts/deploy_to_eks.sh
+      timeout: 300
+      runas: root
+
