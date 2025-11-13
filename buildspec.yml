@@ -21,9 +21,7 @@ phases:
     commands:
       - echo "Pushing Docker image to ECR..."
       - docker push $REPO_URI:latest
-      - echo "Deploying to EKS cluster..."
-      - kubectl apply -f k8s/deployment.yaml
-      - kubectl apply -f k8s/service.yaml
+      
 artifacts:
   files:
     - appspec.yml
